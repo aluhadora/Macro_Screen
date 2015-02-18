@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0262A80-C148-41DF-AF63-7A1F619BD510}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Replacement_for_Macros</RootNamespace>
+    <AssemblyName>Replacement for Macros</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>stock_record_macro.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\..\Starcraft\WinAuth-1.5.1116-src\WinAuth\bin\Debug\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Authenticator\Authenticator.cs" />
+    <Compile Include="Controls\Authenticator\AuthenticatorException.cs" />
+    <Compile Include="Controls\Authenticator\AuthenticatorWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Authenticator\AuthenticatorWidget.Designer.cs">
+      <DependentUpon>AuthenticatorWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BNetStatus\BNetStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BNetStatus\BNetStatus.Designer.cs">
+      <DependentUpon>BNetStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BNetStatus\BnetStatusProcess.cs" />
+    <Compile Include="Controls\ControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlBase.Designer.cs">
+      <DependentUpon>ControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\ProcessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Dialogs\ProcessDialog.Designer.cs">
+      <DependentUpon>ProcessDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IControlBase.cs" />
+    <Compile Include="Controls\Magnifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Magnifier.Designer.cs">
+      <DependentUpon>Magnifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProcessButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DefinitionProcessor.cs" />
+    <Compile Include="ButtonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ButtonForm.Designer.cs">
+      <DependentUpon>ButtonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\IntegerUtility.cs" />
+    <Compile Include="Utilities\MovementUtility.cs" />
+    <EmbeddedResource Include="Controls\Authenticator\AuthenticatorWidget.resx">
+      <DependentUpon>AuthenticatorWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BNetStatus\BNetStatus.resx">
+      <DependentUpon>BNetStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Dialogs\ProcessDialog.resx">
+      <DependentUpon>ProcessDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Magnifier.resx">
+      <DependentUpon>Magnifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonForm.resx">
+      <DependentUpon>ButtonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CaselleClarity.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caselle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator.png" />
+    <None Include="Resources\Starcraft-2-256.png" />
+    <None Include="Resources\Circle_Red.png" />
+    <None Include="Resources\Circle_Green.png" />
+    <None Include="Resources\Circle_Blue.png" />
+    <None Include="Resources\Folder-icon.png" />
+    <None Include="Resources\emblem_mail.png" />
+    <None Include="Resources\1371496357_preferences-system-time.png" />
+    <None Include="Resources\1371496467_ms_visual_studio.png" />
+    <None Include="Resources\1371496520_bug.png" />
+    <None Include="Resources\sql.png" />
+    <None Include="Resources\stock_data_edit_sql_query.png" />
+    <None Include="Resources\stock_data_edit_sql_query1.png" />
+    <None Include="Resources\1373657609_interact.png" />
+    <None Include="Resources\TwitchSocialIcon_64px.png" />
+    <None Include="Resources\mineralServer.jpg" />
+    <None Include="Resources\Mineral.png" />
+    <None Include="Resources\128png.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\podcast_header_icon.png" />
+    <None Include="Resources\icon1.png" />
+    <None Include="Resources\Aa0DBUpdateGears.bmp" />
+    <None Include="Resources\1380570647939.gif" />
+    <Content Include="stock_record_macro.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
