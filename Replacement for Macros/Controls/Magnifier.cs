@@ -65,7 +65,12 @@ namespace Replacement_for_Macros.Controls
 
       using (var g = Graphics.FromImage(screenBMP))
       {
-        g.CopyFromScreen(new Point(x - width / 2, y - height / 2), new Point(0, 0), new Size(width, height));
+        try
+        {
+          g.CopyFromScreen(new Point(x - width / 2, y - height / 2), new Point(0, 0), new Size(width, height));
+        }
+        catch { }
+
         g.DrawEllipse(Pens.Black, width / 2 - 2, height / 2 - 2, 4, 4);
         screenBMP.SetPixel(width / 2, height / 2, Color.Red);
       }

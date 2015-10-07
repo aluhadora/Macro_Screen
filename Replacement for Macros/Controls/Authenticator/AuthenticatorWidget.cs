@@ -47,7 +47,7 @@ namespace Replacement_for_Macros.Controls.Authenticator
 
     private void AuthenticatorWidget_Load(object sender, EventArgs e)
     {
-      return;
+      //return;
       if (DesignMode) return;
       if (ConfigFile == null) return;
       if (ConfigFile == string.Empty) return;

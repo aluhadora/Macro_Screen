@@ -36,25 +36,27 @@
       this.okButton = new System.Windows.Forms.Button();
       this.label3 = new System.Windows.Forms.Label();
       this.tooltipTextBox = new System.Windows.Forms.TextBox();
+      this.label4 = new System.Windows.Forms.Label();
+      this.dirTextBox = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // processTextBox
       // 
       this.processTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.processTextBox.Location = new System.Drawing.Point(101, 12);
+      this.processTextBox.Location = new System.Drawing.Point(111, 12);
       this.processTextBox.Name = "processTextBox";
-      this.processTextBox.Size = new System.Drawing.Size(446, 20);
+      this.processTextBox.Size = new System.Drawing.Size(436, 20);
       this.processTextBox.TabIndex = 0;
       // 
       // argumentTextBox
       // 
       this.argumentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.argumentTextBox.Location = new System.Drawing.Point(101, 38);
+      this.argumentTextBox.Location = new System.Drawing.Point(111, 64);
       this.argumentTextBox.Name = "argumentTextBox";
-      this.argumentTextBox.Size = new System.Drawing.Size(446, 20);
-      this.argumentTextBox.TabIndex = 1;
+      this.argumentTextBox.Size = new System.Drawing.Size(436, 20);
+      this.argumentTextBox.TabIndex = 2;
       // 
       // label1
       // 
@@ -68,7 +70,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(12, 41);
+      this.label2.Location = new System.Drawing.Point(12, 67);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(60, 13);
       this.label2.TabIndex = 3;
@@ -77,7 +79,7 @@
       // cancelButton
       // 
       this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.cancelButton.Location = new System.Drawing.Point(472, 100);
+      this.cancelButton.Location = new System.Drawing.Point(472, 131);
       this.cancelButton.Name = "cancelButton";
       this.cancelButton.Size = new System.Drawing.Size(75, 23);
       this.cancelButton.TabIndex = 1002;
@@ -88,7 +90,7 @@
       // okButton
       // 
       this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.okButton.Location = new System.Drawing.Point(391, 100);
+      this.okButton.Location = new System.Drawing.Point(391, 131);
       this.okButton.Name = "okButton";
       this.okButton.Size = new System.Drawing.Size(75, 23);
       this.okButton.TabIndex = 1001;
@@ -99,7 +101,7 @@
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(12, 67);
+      this.label3.Location = new System.Drawing.Point(12, 93);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(45, 13);
       this.label3.TabIndex = 7;
@@ -109,16 +111,36 @@
       // 
       this.tooltipTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.tooltipTextBox.Location = new System.Drawing.Point(101, 64);
+      this.tooltipTextBox.Location = new System.Drawing.Point(111, 90);
       this.tooltipTextBox.Name = "tooltipTextBox";
-      this.tooltipTextBox.Size = new System.Drawing.Size(446, 20);
-      this.tooltipTextBox.TabIndex = 6;
+      this.tooltipTextBox.Size = new System.Drawing.Size(436, 20);
+      this.tooltipTextBox.TabIndex = 3;
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(12, 41);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(93, 13);
+      this.label4.TabIndex = 1004;
+      this.label4.Text = "Working directory:";
+      // 
+      // dirTextBox
+      // 
+      this.dirTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.dirTextBox.Location = new System.Drawing.Point(111, 38);
+      this.dirTextBox.Name = "dirTextBox";
+      this.dirTextBox.Size = new System.Drawing.Size(436, 20);
+      this.dirTextBox.TabIndex = 1;
       // 
       // ProcessDialog
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(559, 133);
+      this.ClientSize = new System.Drawing.Size(559, 164);
+      this.Controls.Add(this.label4);
+      this.Controls.Add(this.dirTextBox);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.tooltipTextBox);
       this.Controls.Add(this.okButton);
@@ -144,5 +166,7 @@
     private System.Windows.Forms.Button okButton;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.TextBox tooltipTextBox;
+    private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.TextBox dirTextBox;
   }
 }

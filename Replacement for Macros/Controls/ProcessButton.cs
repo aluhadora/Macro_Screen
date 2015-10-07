@@ -11,6 +11,7 @@ namespace Replacement_for_Macros.Controls
   {
     public string ProcessToStart { get; set;}
     public string ProcessArguments { get; set;}
+    public string WorkingDirectory { get; set; }
 
     public Action<string> SetTooltip { get; set; } 
     public Func<string> GetTooltip { get; set; } 
@@ -47,7 +48,7 @@ namespace Replacement_for_Macros.Controls
 
     private void ProcessInfoClick(object sender, EventArgs e)
     {
-      var dialog = new ProcessDialog(ProcessToStart, ProcessArguments, GetTooltip());
+      var dialog = new ProcessDialog(ProcessToStart, ProcessArguments, GetTooltip(), WorkingDirectory);
 
       dialog.ShowDialog(this);
 
@@ -55,6 +56,7 @@ namespace Replacement_for_Macros.Controls
 
       ProcessToStart = dialog.Process;
       ProcessArguments = dialog.Arguments;
+      WorkingDirectory = dialog.WorkingDirectory;
       SetTooltip(dialog.Tooltip);
     }
 
@@ -87,15 +89,18 @@ namespace Replacement_for_Macros.Controls
 
       if (!string.IsNullOrEmpty(ProcessToStart))
       {
-        Start(ProcessToStart, ProcessArguments);
+        Start(ProcessToStart, ProcessArguments, WorkingDirectory);
       }
     }
 
-    private void Start(string processToStart, string processArguments)
+    private void Start(string processToStart, string processArguments, string workingDirectory)
     {
       try
       {
-        Process.Start(processToStart, processArguments);
+        Process.Start(new ProcessStartInfo(processToStart, processArguments)
+        {
+          WorkingDirectory = workingDirectory
+        });
       }
       catch (Exception)
       {

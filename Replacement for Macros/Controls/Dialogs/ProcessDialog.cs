@@ -14,11 +14,12 @@ namespace Replacement_for_Macros.Controls.Dialogs
       OKButtonClicked = false;
     }
 
-    public ProcessDialog(string process, string arguments, string tooltip) : this()
+    public ProcessDialog(string process, string arguments, string tooltip, string directory) : this()
     {
       Process = process;
       Arguments = arguments;
       Tooltip = tooltip;
+      WorkingDirectory = directory;
     }
 
     public string Process
@@ -38,6 +39,13 @@ namespace Replacement_for_Macros.Controls.Dialogs
       get { return tooltipTextBox.Text; }
       set { tooltipTextBox.Text = value; }
     }
+
+    public string WorkingDirectory
+    {
+      get { return dirTextBox.Text; }
+      set { dirTextBox.Text = value; }
+    }
+
 
     private void cancelButton_Click(object sender, EventArgs e)
     {

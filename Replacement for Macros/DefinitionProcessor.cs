@@ -79,6 +79,7 @@ namespace Replacement_for_Macros
 
       button.ProcessToStart = reader.GetAttribute("Path");
       button.ProcessArguments = reader.GetAttribute("Arguments");
+      button.WorkingDirectory = reader.GetAttribute("WorkingDirectory");
       tooltip.SetToolTip(button, reader.GetAttribute("Tooltip"));
       button.SetTooltip = x => tooltip.SetToolTip(control, x);
       button.GetTooltip = () => tooltip.GetToolTip(control);
@@ -161,6 +162,7 @@ namespace Replacement_for_Macros
       _xw.WriteStartElement("Process");
 
       WriteAttribute("Path", button.ProcessToStart ?? string.Empty);
+      WriteAttribute("WorkingDirectory", button.WorkingDirectory ?? string.Empty);
       if (!string.IsNullOrEmpty(button.ProcessArguments)) WriteAttribute("Arguments", button.ProcessArguments);
 
       WriteAttribute("Tooltip", getToolTip(button));
